@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:CatalogApp.ViewModels"
+             x:Class="CatalogApp.Views.AddBookPage"
+             x:DataType="viewmodels:AddBookViewModel"
+             Title="Добавление книги">
+
+    <ContentPage.BindingContext>
+        <viewmodels:AddBookViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="20">
+                <Editor Placeholder="Введите название книги"
+                        Text="{Binding Title}"
+                        HeightRequest="100" />
+
+                <Editor Placeholder="Введите жанр книги"
+                        Text="{Binding Genre}"
+                        HeightRequest="70" />
+
+                <Editor Placeholder="Введите ряд хранения"
+                        Text="{Binding Row}"
+                        HeightRequest="50" />
+
+                <Editor Placeholder="Введите стеллаж хранения"
+                        Text="{Binding Shelving}"
+                        HeightRequest="50" />
+
+                <Editor Placeholder="введите полку хранения"
+                        Text="{Binding Shelf}"
+                        HeightRequest="50" />
+
+                <Grid ColumnDefinitions=",">
+                    <Button Text="Сохранить"
+                            Command="{Binding SaveCommand}" />
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
